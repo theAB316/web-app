@@ -1,0 +1,22 @@
+{% extends 'socialmedia/base.html' %}
+
+
+
+{% block body %}
+	<h1>Selfie Less Acts</h1>
+	<h2>Choose one below</h2>
+	{% if allActs %}
+		<ul>
+			{% for act in allActs %}
+			<li>
+				<a href="{% url 'socialmedia:detail' act.id %}">
+				{{act}}
+				</a>
+			</li>
+			
+			{% endfor %}
+		</ul>
+	{% else %}
+		<h3>No acts to show!</h3>
+	{% endif %}
+{% endblock %}
